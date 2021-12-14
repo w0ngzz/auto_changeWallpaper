@@ -11,7 +11,6 @@ if os.path.exists(dir) is False:
     fp=open(dir,"wb")
     fp.write(img.content)
     fp.close()
-    setWallpaper(dir)
     print('finished')
     #sys.exit()
 else:print('existed')
