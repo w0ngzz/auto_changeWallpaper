@@ -6,7 +6,7 @@ url='http://cn.bing.com/'+urlbase+'_UHD.jpg'
 print(url)
 img = requests.get(url)#.content
 name = re.findall(r'OHR.*$',urlbase)
-dir = r'D:/wallpaper/'+ name[0] +r'.jpg'
+dir = r'.'+ name[0] +r'.jpg'
 if os.path.exists(dir) is False:
     fp=open(dir,"wb")
     fp.write(img.content)
