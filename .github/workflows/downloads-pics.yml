@@ -8,8 +8,12 @@ on:
         required: false
 jobs:
   build:
-   - name: checkout code
-     uses: actions/chechout@v2
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: list direction
+        run: ls
+      
    
-   - name: list direction
-     run: ls
