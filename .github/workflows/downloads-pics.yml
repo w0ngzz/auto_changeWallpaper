@@ -11,9 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: checkout code
+      - name: Checkout code
         uses: actions/checkout@v2
-      - name: list direction
-        run: ls
       
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with: 
+          python-version: 3.x
+      
+      - name: install Request
+        run: pip install requests
+        
+      - name: run main code
+        run: python main.py
    
