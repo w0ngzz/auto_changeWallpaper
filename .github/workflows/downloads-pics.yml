@@ -24,4 +24,15 @@ jobs:
         
       - name: run main code
         run: python main.py
-   
+      
+      - name: commit and push
+        run:  |
+          git config --local user.email ${{secrets.email}}
+          git config --local user.name ${{secrets.username}}
+          git commit -m "a new pic"
+      
+      - name: push
+        uses: ad-m/github-push-action@master
+        with: 
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            branch: "main"
