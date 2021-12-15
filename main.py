@@ -2,7 +2,9 @@ import requests,re,json,os,sys
 
 email = str(os.environ['EMAIL'])
 username = str(os.environ['USERNAME'])
-#cmd1 = 'git'
+cmd[0] = r'git config --local user.email "' + email +r'"'
+cmd[1] = r'git config --local user.name "' + username + r'"'
+cmd[2] = r'git commit -m "a new pic" -a'
 
 req = requests.get("http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1").json()
 urlbase = req['images'][0]['urlbase']
@@ -19,3 +21,5 @@ if os.path.exists(dir) is False:
     #sys.exit()
 else:print('existed')
 #sys.exit()
+for i in range(0,3):
+    os.system(cmd[i])
