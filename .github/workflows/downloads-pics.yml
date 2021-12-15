@@ -23,13 +23,14 @@ jobs:
         run: pip install requests
         
       - name: run main code
-        run: python main.py
+        
       
       - name: commit and push
-        run:  |
-          git config --local user.email ${{secrets.email}}
-          git config --local user.name ${{secrets.username}}
-          git commit -m "a new pic"
+        env: 
+          EMAIL: ${{ secrets.email }}
+          USERNAME: ${{ secrets.usernami }}
+        run: python main.py
+          
       
       - name: push
         uses: ad-m/github-push-action@master
