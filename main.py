@@ -1,5 +1,9 @@
 import requests,re,json,os,sys
 
+email = str(os.environ['EMAIL'])
+username = str(os.environ['USERNAME'])
+#cmd1 = 'git'
+
 req = requests.get("http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1").json()
 urlbase = req['images'][0]['urlbase']
 url='http://cn.bing.com/'+urlbase+'_UHD.jpg'
