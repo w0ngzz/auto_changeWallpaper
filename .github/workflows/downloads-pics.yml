@@ -22,8 +22,6 @@ jobs:
       - name: install Request
         run: pip install requests
         
-      - name: run main code
-        
       
       - name: commit and push
         env: 
